@@ -32,4 +32,20 @@
             <Line Type="bytes" Address="0x01187ce7" Value="b801000000"/>
         </PatchList>
     </Metadata>
+    <Metadata Title="Driveclub"
+              Name="Remove Photomode Camera Limits"
+              Note="Removes camera distance limit, collision checks, and camera height limit while in photomode"
+              Author="P0stf1x"
+              PatchVer="1.0"
+              AppVer="01.28"
+              AppElf="eboot.bin">
+        <PatchList>
+            <!-- Set camera distance limit to 1 billion -->
+            <Line Type="bytes" Address="0x0175c8dc" Value="286b6e4e"/>
+            <!-- Remove collision checks -->
+            <Line Type="bytes" Address="0x010e9098" Value="e91502000090"/>
+            <!-- Remove height limit -->
+            <Line Type="bytes" Address="0x010e8d96" Value="eb3d"/>
+        </PatchList>
+    </Metadata>
 </Patch>
